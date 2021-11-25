@@ -28,11 +28,11 @@ function SongTile({ content }) {
       <div className="box row-start-2 row-end-2 col-start-2 col-end-4">
         <p className="text-xs text-third">
           by <MicIcon sx={{ color: '#5A2C81' }} /> :
-          <span className="text-xs font-bold ml-1">
+          <span className="text-xs font-bold mx-1">
             {content.authors[0].pseudo}
           </span>
           <PianoIcon sx={{ color: '#5A2C81' }} />:{' '}
-          <span className="text-xs font-bold ml-1">
+          <span className="text-xs font-bold mx-1">
             {' '}
             {content.authors[1].pseudo}
           </span>
@@ -40,15 +40,23 @@ function SongTile({ content }) {
       </div>
 
       <div className="box row-start-3 row-end-3 col-start-2 col-end-4">
-        <audio controls className="w-52 h-6">
+        <audio controls className="w-60 h-6">
           <source src={content.source} />
           <track kind="captions" />
         </audio>
       </div>
 
-      <div id="interaction" className="box row-start-1 row-end-4 col-start-4">
-        <FavoriteIcon sx={{ color: '#FAF9F5' }} />
-        <PlayArrowIcon sx={{ color: '#FAF9F5' }} />
+      <div
+        id="interaction"
+        className="box row-start-1 row-end-4 col-start-4 flex flex-col"
+      >
+        <p className="text-xs font-bold mx-1 text-third">
+          <FavoriteIcon sx={{ color: '#FAF9F5', fontSize: 21 }} /> 34
+        </p>
+        <p className="text-xs font-bold mx-1 text-third">
+          <PlayArrowIcon sx={{ color: '#FAF9F5', fontSize: 25 }} />
+          128
+        </p>
       </div>
     </div>
   );
