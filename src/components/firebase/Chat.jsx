@@ -25,7 +25,7 @@ function Chat() {
             <div
               key={id}
               className={`msg ${
-                uid === auth.currentUser.uid ? 'sent' : 'received'
+                uid === auth?.currentUser?.uid ? 'sent' : 'received'
               }`}
             >
               <img src={photoURL} alt="" />
