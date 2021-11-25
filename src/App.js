@@ -1,14 +1,16 @@
 import StarIcon from '@mui/icons-material/Star';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div id="App">
-      <header> Header</header>
+      <Header />
       <div id="main">
         Hackathon
         <StarIcon />
       </div>
-      <footer>Footer</footer>
+      <Footer />
     </div>
   );
 }
