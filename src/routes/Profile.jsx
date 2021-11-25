@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Avatar } from '@mui/material';
+import axios from 'axios';
 import Divid from '../components/Divid';
 
 function Profile() {
+  const [profile, setProfile] = useState();
+
+  const getProfile = async () => {
+    const res = await axios.get(`http://localhost:5000/profile/1`);
+    setProfile(res.data);
+    console.log(profile);
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+  if (!profile) {
+    return 'Loading ...';
+  }
   return (
     <div>
       <div className="flex flex-col justify-between items-center">
@@ -13,7 +29,7 @@ function Profile() {
           src="./assets/yb.png"
           sx={{ width: 70, height: 70, border: '#5A2C81' }}
         />
-        <h3 className="font-semibold text-third mt-3"> Yannis Legénie </h3>
+        <h3 className="font-semibold text-third mt-3"> {profile.firstname}</h3>
         <p className=" text-sm m-7 text-justify text-third">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
