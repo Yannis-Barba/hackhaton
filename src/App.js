@@ -6,12 +6,14 @@ import Instrumentals from './routes/Instrumentals';
 import Records from './routes/Records';
 import UploadForm from './routes/UploadForm';
 import Profile from './routes/Profile';
+import Upload from './components/firebase/Upload';
 
 function App() {
   return (
     <div id="App">
       <Header />
       <div id="main">
+        <Upload />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Instrumentals" component={Instrumentals} />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { db, auth } from './index';
 import SendMessage from './SendMessage';
+import SignIn from './signIn';
 import SignOut from './SignOut';
 
 function Chat() {
@@ -17,7 +18,8 @@ function Chat() {
   return (
     <div>
       <SignOut />
-      <div className="msgs">
+      <SignIn />
+      <div className="msgs flex justify-center items-center flex-col">
         {messages.map(({ id, text, photoURL, uid }) => (
           <div>
             <div
