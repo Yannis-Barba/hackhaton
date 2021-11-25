@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import imageHome from '../assets/imageHome.jpeg';
+import SongTile from '../components/SongTile';
 
 const Home = () => {
-  const [songsList, setSongsList] = useState();
+  const [songsList, setSongsList] = useState([]);
 
   const getSongList = async () => {
     const res = await axios.get('http://localhost:5000/songs');
+    console.log(res);
     setSongsList(res.data);
     console.log(songsList);
   };
@@ -15,7 +17,7 @@ const Home = () => {
     getSongList();
   }, []);
 
-  if (!songsList) {
+  if (songsList === []) {
     return 'Loading';
   }
 
@@ -35,10 +37,14 @@ const Home = () => {
           A SONG
         </h1>
       </div>
-      <div id="listOfSong">
-        <ul>
+      <div id="listOfSong" className="">
+        <ul className="w-10/12 flex flex-col items-center p-4">
           {songsList.map((song) => {
-            return <li key={song.id}> {song.name} </li>;
+            return (
+              <li key={song.id} classNam="text-white">
+                <SongTile content={song} />
+              </li>
+            );
           })}
         </ul>
       </div>
