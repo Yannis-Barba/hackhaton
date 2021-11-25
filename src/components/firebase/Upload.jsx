@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import 'firebase/storage';
 
 function Upload() {
+  const db = firebase.firestore();
   const [fileUrl, setFileUrl] = React.useState(null);
   const [musicUrl, setMusicUrl] = React.useState(null);
   const [disable, setDisable] = React.useState(true);
@@ -31,6 +32,26 @@ function Upload() {
     }
   }, [musicUrl]);
 
+  // RECUPERE LES INFOS DE LA BASE DE DONNEES
+
+  React.useEffect(() => {
+    const docRef = db.collection('Users').doc('jckI5UVLkha1hn2mTLt5');
+    docRef
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          console.log('Document data:', doc.data());
+        } else {
+          console.log('No such document!');
+        }
+      })
+      .catch((error) => {
+        console.log('Error getting document:', error);
+      }, []);
+  });
+
+  // *********************************************
+
   // eslint-disable-next-line no-unused-vars
   const submit = (e) => {
     e.preventDefault();
@@ -47,6 +68,7 @@ function Upload() {
       alert('Music added');
     }
   };
+
   return (
     <div>
       <form>
