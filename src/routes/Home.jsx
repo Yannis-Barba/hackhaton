@@ -38,10 +38,10 @@ const Home = () => {
         </h1>
       </div>
       <div id="listOfSong" className="">
-        <ul className="w-10/12 flex flex-col items-center p-4">
+        <ul className="">
           {songsList.map((song) => {
             return (
-              <li key={song.id} classNam="text-white">
+              <li key={song.id} className="my-2">
                 <SongTile content={song} />
               </li>
             );
