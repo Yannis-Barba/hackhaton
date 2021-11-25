@@ -1,7 +1,24 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import imageHome from '../assets/imageHome.jpeg';
 
 const Home = () => {
+  const [songsList, setSongsList] = useState();
+
+  const getSongList = async () => {
+    const res = await axios.get('http://localhost:5000/songs');
+    setSongsList(res.data);
+    console.log(songsList);
+  };
+
+  useEffect(() => {
+    getSongList();
+  }, []);
+
+  if (!songsList) {
+    return 'Loading';
+  }
+
   return (
     <div>
       <div className="w-full">
@@ -17,6 +34,13 @@ const Home = () => {
         <h1 className="box row-start-3 col-start-2 col-end-4 pl-28 mb-1">
           A SONG
         </h1>
+      </div>
+      <div id="listOfSong">
+        <ul>
+          {songsList.map((song) => {
+            return <li key={song.id}> {song.name} </li>;
+          })}
+        </ul>
       </div>
     </div>
   );
