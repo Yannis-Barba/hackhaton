@@ -4,11 +4,9 @@ import imageHome from '../assets/imageHome.jpeg';
 const Home = () => {
   return (
     <div>
-      <img
-        src={imageHome}
-        alt="Home"
-        className="absolute opacity-60 w-screen"
-      />
+      <div className="w-full">
+        <img src={imageHome} alt="Home" className="absolute opacity-60" />
+      </div>
       <div className="grid overflow-hidden grid-cols-3 grid-rows-3 gap-12 relative text-third font-bold text-3xl">
         <h1 className="box row-start-1 row-span-0 col-start-1 col-end-3 ml-1">
           ONE BEAT
