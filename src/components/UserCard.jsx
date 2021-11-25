@@ -21,7 +21,7 @@ export default function Example() {
   const [user, setUser] = useState();
 
   const getUser = async () => {
-    const res = await axios.get('http://localhost:5000/user/1');
+    const res = await axios.get('http://localhost:5000/user/2');
     setUser(res.data[0]);
     console.log('user :', user);
   };
