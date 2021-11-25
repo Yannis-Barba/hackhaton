@@ -29,7 +29,7 @@ function Profile() {
           src="./assets/yb.png"
           sx={{ width: 70, height: 70, border: '#5A2C81' }}
         />
-        <h3 className="font-semibold text-third mt-3"> {profile.firstname}</h3>
+        <h2 className="font-semibold text-third mt-3">{profile.pseudo}</h2>
         <p className=" text-sm m-7 text-justify text-third">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
