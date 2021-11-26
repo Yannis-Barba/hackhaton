@@ -5,7 +5,6 @@ import PianoIcon from '@mui/icons-material/Piano';
 import MicIcon from '@mui/icons-material/Mic';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import FV from '../assets/FV.jpg';
 
 function SongTile({ content }) {
   console.log(content);
@@ -15,7 +14,7 @@ function SongTile({ content }) {
       className="grid overflow-hidden grid-cols-3 grid-rows-1 w-auto mx-2"
     >
       <div className="box row-start-1 row-end-4 col-start-1 col-end-1">
-        <img src={FV} alt={content.name} className="w-20 h-20" />
+        <img src={content.image} alt={content.name} className="w-20 h-20" />
       </div>
 
       <div
@@ -41,7 +40,7 @@ function SongTile({ content }) {
 
       <div className="box row-start-3 row-end-3 col-start-2 col-end-4">
         <audio controls className="w-60 h-6 mt-2">
-          <source src={content.source} />
+          <source src="https://ucarecdn.com/07ebda9f-1d04-4482-8219-58ac6dd52618/" />
           <track kind="captions" />
         </audio>
       </div>
@@ -51,11 +50,12 @@ function SongTile({ content }) {
         className="box row-start-1 row-end-4 col-start-4 flex flex-col"
       >
         <p className="text-xs font-bold mx-1 text-third">
-          <FavoriteIcon sx={{ color: '#FAF9F5', fontSize: 21 }} /> 34
+          <FavoriteIcon sx={{ color: '#FAF9F5', fontSize: 21 }} />{' '}
+          {content.likes}
         </p>
         <p className="text-xs font-bold mx-1 text-third">
           <PlayArrowIcon sx={{ color: '#FAF9F5', fontSize: 25 }} />
-          128
+          {content.views}
         </p>
       </div>
     </div>
