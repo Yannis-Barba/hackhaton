@@ -13,6 +13,10 @@ h3 {
   font-family: 'secondaryFont';
 }
 
+h2 {
+  font-size: 1.8rem;
+}
+
 body {
   background-color: #1b1b1b;
   margin: 0;
@@ -21,6 +25,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 74px;
 }
 
 #App {

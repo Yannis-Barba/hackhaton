@@ -26,15 +26,18 @@ const Home = () => {
     <div>
       <div className="lg:h-80">
         <img src={imageHome} alt="Home" id="homeImg" />
-        <h2 className="text-third text-2xl font-bold flex justify-center my-4">
-          CURRENT TRENDS
-        </h2>
       </div>
       <div id="listOfSong" className="">
         <ul className="">
+          <h2 className="text-third text-2xl font-bold flex justify-center my-4">
+            CURRENT TRENDS
+          </h2>
           {songsList.map((song) => {
             return (
-              <li key={song.id} className="my-5 pt-2 border-t border-primary">
+              <li
+                key={song.id}
+                className="player my-5 lg:mx-36 pt-2 border-t border-primary"
+              >
                 <SongTile content={song} />
               </li>
             );
