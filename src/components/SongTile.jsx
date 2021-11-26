@@ -26,14 +26,23 @@ function SongTile({ content }) {
 
       <div className="box row-start-2 row-end-2 col-start-2 col-end-4">
         <p className="text-sm text-third">
-          by <MicIcon sx={{ color: '#5A2C81' }} /> :
-          <span className="text-xs font-bold mx-1">
-            {content.authors[0].pseudo}
-          </span>
+          by :
+          {content.authors[1] ? (
+            <>
+              <MicIcon sx={{ color: '#5A2C81' }} />
+              <span className="text-xs font-bold mx-1">
+                {content.authors[0].pseudo}
+              </span>
+            </>
+          ) : (
+            ''
+          )}
           <PianoIcon sx={{ color: '#5A2C81' }} />:{' '}
           <span className="text-xs font-bold mx-1">
             {' '}
-            {content.authors[1].pseudo}
+            {content.authors[1]
+              ? content.authors[1].pseudo
+              : content.authors[0].pseudo}
           </span>
         </p>
       </div>
