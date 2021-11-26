@@ -1,6 +1,7 @@
 /* disable-eslint */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PianoIcon from '@mui/icons-material/Piano';
 import MicIcon from '@mui/icons-material/Mic';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -26,15 +27,32 @@ function SongTile({ content }) {
 
       <div className="box row-start-2 row-end-2 col-start-2 col-end-4">
         <p className="text-sm text-third">
-          by <MicIcon sx={{ color: '#5A2C81' }} /> :
-          <span className="text-xs font-bold mx-1">
-            {content.authors[0].pseudo}
-          </span>
+          by :
+          {content.authors[1] ? (
+            <>
+              <MicIcon sx={{ color: '#5A2C81' }} />
+              <Link to={`/Profile${content.authors[0].id}`}>
+                <span className="text-xs font-bold mx-1">
+                  {content.authors[0].pseudo}
+                </span>
+              </Link>
+            </>
+          ) : (
+            ''
+          )}
           <PianoIcon sx={{ color: '#5A2C81' }} />:{' '}
-          <span className="text-xs font-bold mx-1">
-            {' '}
-            {content.authors[1].pseudo}
-          </span>
+          <Link
+            to={`Profile/${
+              content.authors[1] ? content.authors[1].id : content.authors[0].id
+            }`}
+          >
+            <span className="text-xs font-bold mx-1">
+              {' '}
+              {content.authors[1]
+                ? content.authors[1].pseudo
+                : content.authors[0].pseudo}
+            </span>
+          </Link>
         </p>
       </div>
 

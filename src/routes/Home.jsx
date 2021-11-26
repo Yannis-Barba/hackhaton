@@ -36,7 +36,7 @@ const Home = () => {
             return (
               <li
                 key={song.id}
-                className="player my-5 lg:mx-36 pt-2 border-t border-primary"
+                className="player my-5 pt-2 border-t border-primary"
               >
                 <SongTile content={song} />
               </li>
