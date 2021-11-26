@@ -3,24 +3,30 @@ import React, { useState } from 'react';
 import '../css/UploadForm.css';
 import { Widget } from '@uploadcare/react-widget';
 import axios from 'axios';
+import { useHistory } from 'react-router';
 
 function UploadForm() {
   const [newTitle, setNewTitle] = useState(null);
   const [newDescription, setNewDescription] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
   const [musicUrl, setMusicUrl] = useState(null);
+  const history = useHistory();
 
   return (
     <div id="formContainer" className="bg-third">
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          axios.post('http://localhost:5000/songs', {
-            image: imageUrl,
-            music: musicUrl,
-            title: newTitle,
-            description: newDescription,
-          });
+          axios
+            .post('http://localhost:5000/songs', {
+              image: imageUrl,
+              music: musicUrl,
+              title: newTitle,
+              description: newDescription,
+            })
+            .then(() => {
+              history.push('/');
+            });
         }}
       >
         <h2 className="mt-2 font-bold text-center">UPLOAD FORM</h2>
