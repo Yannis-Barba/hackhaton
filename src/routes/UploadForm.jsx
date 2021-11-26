@@ -25,7 +25,7 @@ function UploadForm() {
               description: newDescription,
             })
             .then(() => {
-              history.push('/');
+              history.push('/Dashboard');
             });
         }}
       >
