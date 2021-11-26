@@ -1,11 +1,11 @@
 import React from 'react';
-import Chat from '../components/firebase/Chat';
+// import Chat from '../components/firebase/Chat';
 
 const Home = () => {
   return (
     <div>
       Home
-      <Chat />
+      {/* <Chat /> */}
     </div>
   );
 };

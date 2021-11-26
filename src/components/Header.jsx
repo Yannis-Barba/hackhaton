@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Logo from '../assets/ALL_OF_TRACKS.png';
+import SignIn from './firebase/signIn';
 import '../css/Header.css';
 
 function Header() {
@@ -13,11 +14,16 @@ function Header() {
         </div>
       </Link>
       <Link to="/Profile">
-        <div>
-          <AccountCircleIcon
-            className="hover:text-four"
-            sx={{ fontSize: 36, color: '#FAF9F5' }}
-          />
+        <div className="flex items-center">
+          <div>
+            <AccountCircleIcon
+              className="hover:text-four"
+              sx={{ fontSize: 36, color: '#FAF9F5' }}
+            />
+          </div>
+          <div className="singIn ">
+            <SignIn />
+          </div>
         </div>
       </Link>
     </div>
