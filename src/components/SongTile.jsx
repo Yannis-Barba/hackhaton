@@ -40,7 +40,7 @@ function SongTile({ content }) {
 
       <div className="box row-start-3 row-end-3 col-start-2 col-end-4">
         <audio controls className="w-60 h-6 mt-2">
-          <source src="https://ucarecdn.com/07ebda9f-1d04-4482-8219-58ac6dd52618/" />
+          <source src={content.sources} />
           <track kind="captions" />
         </audio>
       </div>
