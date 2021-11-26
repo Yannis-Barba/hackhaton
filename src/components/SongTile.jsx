@@ -22,7 +22,7 @@ function SongTile({ content }) {
         id="mainContent"
         className="box row-start-1 row-end-2 col-start-2 col-end-4"
       >
-        <h2 className="text-third font-semibold"> {content.name} </h2>
+        <h3 className="text-third font-semibold"> {content.name} </h3>
       </div>
 
       <div className="box row-start-2 row-end-2 col-start-2 col-end-4">

@@ -31,7 +31,7 @@ const Instrumentals = () => {
             return (
               <li
                 key={beatmaker.id}
-                className="my-5 pt-2 border-t border-primary"
+                className="player my-5 pt-2 border-t border-primary"
               >
                 <SongTile content={beatmaker.prods[0]} />
               </li>

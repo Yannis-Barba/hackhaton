@@ -64,7 +64,7 @@ export default function Example() {
             <div className="mt-5 flex justify-center sm:mt-0">
               <a
                 href="/UploadForm"
-                className="flex justify-center items-center px-4 py-2 shadow-sm text-sm font-medium rounded-3xl text-third bg-secondary hover:bg-four"
+                className="upBtn flex justify-center items-center px-4 py-2 shadow-sm text-sm font-medium rounded-3xl text-third bg-secondary hover:bg-four"
               >
                 UPLOAD
               </a>
@@ -92,7 +92,7 @@ export default function Example() {
       <ul>
         {user.prods.map((prod) => {
           return (
-            <li>
+            <li className="player my-5 pt-2 border-t border-primary">
               <SongTile content={prod} />
             </li>
           );

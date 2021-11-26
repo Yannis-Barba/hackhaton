@@ -30,7 +30,7 @@ function UploadForm() {
         }}
       >
         <h2 className="mt-2 font-bold text-center">UPLOAD FORM</h2>
-        <h3 className="mt-2 font-semibold">Add an image</h3>
+
         {/* <span className="flex items-center justify-center gap-1">
           <h3 className="mt-2 font-semibold">Add an image</h3>
           <label htmlFor="avatar" className="labelForInput">
@@ -46,17 +46,20 @@ function UploadForm() {
             className="inputfile mb-6 mx-auto"
           />
         </span> */}
-        <Widget
-          publicKey="383c2db2fc40ae1ac595"
-          id="file"
-          crop
-          onChange={(info) => {
-            console.log('info', info.originalUrl);
-            console.log('info.uuid', info.uuid);
-            setImageUrl(info.originalUrl);
-            console.log(imageUrl);
-          }}
-        />
+        <span className="flex flex-row my-3 justify-center">
+          <h3 className="mt-2 font-semibold">Add an image</h3>
+          <Widget
+            publicKey="383c2db2fc40ae1ac595"
+            id="file"
+            crop
+            onChange={(info) => {
+              console.log('info', info.originalUrl);
+              console.log('info.uuid', info.uuid);
+              setImageUrl(info.originalUrl);
+              console.log(imageUrl);
+            }}
+          />
+        </span>
         <div className="my-1 text-center">
           <input
             type="text"
@@ -75,15 +78,17 @@ function UploadForm() {
             onChange={(e) => setNewDescription(e.target.value)}
           />
         </div>
-        <h3 className="font-semibold">Add your song</h3>
-        <Widget
-          publicKey="383c2db2fc40ae1ac595"
-          id="file"
-          onChange={(info) => {
-            setMusicUrl(info.originalUrl);
-            console.log(musicUrl);
-          }}
-        />
+        <span className="flex flex-row my-3 justify-center">
+          <h3 className="font-semibold mt-2">Add your song</h3>
+          <Widget
+            publicKey="383c2db2fc40ae1ac595"
+            id="file"
+            onChange={(info) => {
+              setMusicUrl(info.originalUrl);
+              console.log(musicUrl);
+            }}
+          />
+        </span>
         {/* <span className="flex items-center justify-center gap-1 mb-2">
           <h3 className="font-semibold">Add your song</h3>
           <label htmlFor="song" className="labelForInput">
@@ -101,7 +106,7 @@ function UploadForm() {
         </span> */}
         <button
           type="submit"
-          className="bg-secondary rounded-3xl text-third w-2/5 mx-auto p-2"
+          className="postBtn bg-secondary rounded-3xl text-third w-2/5 mx-auto p-2"
         >
           POST
         </button>

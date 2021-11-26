@@ -42,7 +42,7 @@ function Profile() {
       <ul>
         {profile.prods.map((prod) => {
           return (
-            <li>
+            <li className="player my-5 pt-2 border-t border-primary">
               <SongTile content={prod} />
             </li>
           );

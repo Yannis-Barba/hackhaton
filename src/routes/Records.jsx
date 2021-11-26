@@ -30,7 +30,10 @@ function Records() {
         <ul className="">
           {singersList.map((singer) => {
             return (
-              <li key={singer.id} className="my-5 pt-2 border-t border-primary">
+              <li
+                key={singer.id}
+                className="player my-5 pt-2 border-t border-primary"
+              >
                 <SongTile content={singer.prods[0]} />
               </li>
             );
