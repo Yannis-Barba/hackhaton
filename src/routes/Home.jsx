@@ -24,14 +24,17 @@ const Home = () => {
 
   return (
     <div>
-      <div id="imgContainer">
+      <div className="lg:h-80">
         <img src={imageHome} alt="Home" id="homeImg" />
+        <h2 className="text-third text-2xl font-bold flex justify-center my-4">
+          CURRENT TRENDS
+        </h2>
       </div>
       <div id="listOfSong" className="">
         <ul className="">
           {songsList.map((song) => {
             return (
-              <li key={song.id} className="my-2">
+              <li key={song.id} className="my-5 pt-2 border-t border-primary">
                 <SongTile content={song} />
               </li>
             );
