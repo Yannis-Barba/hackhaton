@@ -12,7 +12,7 @@ function SongTile({ content }) {
   return (
     <div
       id="songTile"
-      className="grid overflow-hidden grid-cols-3 grid-rows-1 w-auto mx-2"
+      className="grid overflow-hidden grid-cols-3 grid-rows-1 w-auto mx-4"
     >
       <div className="box row-start-1 row-end-4 col-start-1 col-end-1">
         <img src={content.image} alt={content.name} className="w-20 h-20" />
@@ -57,7 +57,7 @@ function SongTile({ content }) {
       </div>
 
       <div className="box row-start-3 row-end-3 col-start-2 col-end-4">
-        <audio controls className="w-60 h-6 mt-2">
+        <audio controls className=" w-60 h-10 mt-2">
           <source src={content.sources} />
           <track kind="captions" />
         </audio>
