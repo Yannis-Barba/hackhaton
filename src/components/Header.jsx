@@ -12,7 +12,7 @@ function Header() {
           <img src={Logo} alt="logo" className="h-16 mt-2" />
         </div>
       </Link>
-      <Link to="/Profile">
+      <Link to="/Dashboard">
         <div>
           <AccountCircleIcon
             className="hover:text-four"

@@ -24,6 +24,26 @@ body {
   flex-grow: 1;
 }
 
+input[type='file'] {
+  display: none;
+}
+
+.labelForInput {
+  background-color: #232323;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 20px;
+  color: #faf9f5;
+  width: fit-content;
+}
+
+.labelForInput:hover {
+  background-color: #5a2c81;
+  cursor: pointer;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

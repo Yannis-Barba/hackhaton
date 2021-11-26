@@ -7,16 +7,21 @@ function UploadForm() {
     <div id="formContainer" className="bg-third">
       <form>
         <h2 className="mt-2 font-bold text-center">UPLOAD FORM</h2>
-        <h3 className="mt-2 font-semibold">Add an image</h3>
-        <input
-          type="file"
-          id="avatar"
-          name="avatar"
-          accept="image/png, image/jpeg"
-          required
-          className="inputfile mb-6 mx-auto"
-        />
-
+        <span className="flex items-center justify-center gap-1">
+          <h3 className="mt-2 font-semibold">Add an image</h3>
+          <label htmlFor="avatar" className="labelForInput">
+            {' '}
+            UPLOAD{' '}
+          </label>
+          <input
+            type="file"
+            id="avatar"
+            name="avatar"
+            accept="image/png, image/jpeg"
+            required
+            className="inputfile mb-6 mx-auto"
+          />
+        </span>
         <div className="my-1 text-center">
           <input
             type="text"
@@ -31,15 +36,21 @@ function UploadForm() {
             placeholder="Description"
           />
         </div>
-        <h3 className="font-semibold">Add your song</h3>
-        <input
-          type="file"
-          name="mp3"
-          id="file"
-          className="inputfile mb-4 mx-auto"
-          accept="audio/mpeg3"
-          required
-        />
+        <span className="flex items-center justify-center gap-1 mb-2">
+          <h3 className="font-semibold">Add your song</h3>
+          <label htmlFor="song" className="labelForInput">
+            {' '}
+            UPLOAD{' '}
+            <input
+              type="file"
+              name="mp3"
+              id="song"
+              className="inputfile mb-4 mx-auto"
+              accept="audio/mpeg3"
+              required
+            />
+          </label>
+        </span>
         <button
           type="submit"
           className="bg-secondary rounded-3xl text-third w-2/5 mx-auto p-2"
