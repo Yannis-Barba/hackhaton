@@ -26,7 +26,7 @@ function SongTile({ content }) {
       </div>
 
       <div className="box row-start-2 row-end-2 col-start-2 col-end-4">
-        <p className="text-xs text-third">
+        <p className="text-sm text-third">
           by <MicIcon sx={{ color: '#5A2C81' }} /> :
           <span className="text-xs font-bold mx-1">
             {content.authors[0].pseudo}
@@ -40,7 +40,7 @@ function SongTile({ content }) {
       </div>
 
       <div className="box row-start-3 row-end-3 col-start-2 col-end-4">
-        <audio controls className="w-60 h-6">
+        <audio controls className="w-60 h-6 mt-2">
           <source src={content.source} />
           <track kind="captions" />
         </audio>

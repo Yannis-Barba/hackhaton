@@ -6,7 +6,6 @@ import Instrumentals from './routes/Instrumentals';
 import Records from './routes/Records';
 import UploadForm from './routes/UploadForm';
 import Profile from './routes/Profile';
-import Dashboard from './routes/Dashboard';
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
           <Route path="/Records" component={Records} />
           <Route path="/UploadForm" component={UploadForm} />
           <Route path="/Profile" component={Profile} />
-          <Route path="/Dashboard" component={Dashboard} />
         </Switch>
       </div>
       <Footer />
