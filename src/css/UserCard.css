@@ -1,15 +1,10 @@
-#formContainer {
+#cardContainer {
   height: auto;
   width: 85%;
   max-width: 375px;
   margin: 5% auto;
   border-radius: 7px;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-#formContainer form {
   display: flex;
   flex-direction: column;
 }
