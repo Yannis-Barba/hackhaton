@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Avatar } from '@mui/material';
 import axios from 'axios';
 import Divid from '../components/Divid';
+import SongTile from '../components/SongTile';
 
 function Profile() {
   const [profile, setProfile] = useState();
@@ -26,7 +27,7 @@ function Profile() {
         <Avatar
           className="mt-10"
           alt="Avatar"
-          src="./assets/yb.png"
+          src={profile.image}
           sx={{ width: 70, height: 70, border: '#5A2C81' }}
         />
         <h2 className="font-semibold text-third mt-3">{profile.pseudo}</h2>
@@ -38,6 +39,15 @@ function Profile() {
         </p>
       </div>
       <Divid />
+      <ul>
+        {profile.prods.map((prod) => {
+          return (
+            <li>
+              <SongTile content={prod} />
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

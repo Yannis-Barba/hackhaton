@@ -31,7 +31,7 @@ function Records() {
           {singersList.map((singer) => {
             return (
               <li key={singer.id} className="my-5 pt-2 border-t border-primary">
-                <SongTile content={singer.songs[0]} />
+                <SongTile content={singer.prods[0]} />
               </li>
             );
           })}
