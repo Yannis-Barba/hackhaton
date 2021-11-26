@@ -6,3 +6,15 @@
 #imgContainer {
   height: 330px;
 }
+@media only screen and (max-width: 480px) {
+  #imgContainer {
+    height: 165px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .player {
+    max-width: 500px;
+    margin: 20px auto;
+  }
+}
